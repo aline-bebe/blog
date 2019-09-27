@@ -1,0 +1,59 @@
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blogs</title>
+    <!-- <link href="https://fonts.googleapis.com/css?family=Tangerine" rel="stylesheet"> -->
+</head>
+<body>
+    <div class="header" style="text-align:center;margin-top:10px;">
+        <h2 style="font-family: 'Tangerine', cursive;
+        font-size:50px;color:rgb(19, 27, 27)">TRIGGER BLOGS</h2>
+        <small>Pour Your Heart Out</small>
+    </div>
+<div class="intro">
+    <nav class="navbar navbar-expand-sm navbar-light bg-faded">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-content" aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <!-- Brand -->
+        <a class="navbar-brand" href="{{url_for('main.index')}}">TRIGGER</a>
+        
+        <!-- Links -->
+        <div class="collapse navbar-collapse justify-content-end" id="nav-content">   
+        <ul class="navbar-nav">
+            {%  if current_user.is_authenticated %}
+            <li class="nav-item">
+            <a class="nav-link" href="{{url_for('auth.login')}}">Account</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="{{url_for('main.blogs')}}">Create Blog</a>
+            </li>
+            <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('auth.logout')}}">logout</a>
+                    </li>
+            {% else %}
+        <li class="nav-item">
+        <a class="nav-link" href="{{url_for('auth.login')}}">login</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="{{url_for('auth.register')}}">Register</a>
+        {% endif %}
+        </li>
+        </ul>
+        </nav>
+        <div class="content">
+            <p>{{quote}}</p>
+            <br>
+            <blockquote>-{{quote_author}}</blockquote>
+        </div>
+</div>
+
+{%  block content%}{% endblock %}
+
+
+
