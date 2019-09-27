@@ -50,12 +50,18 @@ class Comments(db.Model):
     
     id = db.Column(db.Integer, primary_key = True)
     comment = db.column(db.String(255))
-    blog_id = db.Column(db.Integer, db.ForeignKey("blogs.id"))
+    blog = db.Column(db.Integer, db.ForeignKey("blogs.id"))
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
     
     def save_comment(self):
         db.session.add(self)
         db.session.commit()
+
+
+    @classmethod
+    def get_comments(cls,blog):
+        comments = Comment.query.filter_by(blog_id = blog).all()
+        return comments
         
         
     def ___repr__(self):
@@ -71,6 +77,9 @@ class Quote:
        self.id = id
        self.quote = quote
        self.author = author
+
+
+       
        
        
        

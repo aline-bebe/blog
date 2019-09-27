@@ -37,15 +37,15 @@ def blogs():
 @login_required
 def details(id):
     blog = Blog.query.get_or_404(id)
-    # form = CommentsForm()
-    # comments = Comments.query.all()
+    form = CommentsForm()
+    comments = Comments.query.all()
     
-    # if form.validate_on_submit():
-    #     comment = form.comment.data
-    #     new_comment = Comments(comment = comment)
-    #     new_comment.save_comment()
+    if form.validate_on_submit():
+        comment = form.comment.data
+        new_comment = Comments(comment = comment)
+        new_comment.save_comment()
         
-    #     return redirect(url_for('main.details'))
+        return redirect(url_for('main.details'))
         
     
     return render_template('blog_review.html', blog = blog)
