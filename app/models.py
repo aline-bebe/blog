@@ -21,6 +21,8 @@ class User(db.Model, UserMixin):
     def save_user(self):
         db.session.add(self)
         db.session.commit()
+
+    
     
     def ___repr__():
         return f"User ('{self.username}', '{self.email}'')"

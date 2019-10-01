@@ -1,4 +1,3 @@
-<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,72 +8,66 @@
     <link href="https://fonts.googleapis.com/css?family=Tangerine" rel="stylesheet">
 </head>
 <style>
-    small{
-        margin-bottom: 10px;
-        font-weight: bolder;
-    }
-   body{
-       background-color: #F5F5F5;
-   }
-   h2{
-       font-weight: bold;
-       font-family: 'Anton', sans-serif;
-   }
-   li{
-       text-align: right;
-   }
-   .first{
-       background-image: url('https://images.pexels.com/photos/569169/pexels-photo-569169.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
-       background-repeat: no-repeat;
-       background-size: cover;
-       width: 100;
-       height:400px;
-       opacity:o.5;
-   }
-   nav{
-       background:#E0F7FA;
-       line-height: 50px;
-   }
-   .content{
-       color:black;
-       background-color:#F5F5F5;
-       width:500px;
-       height:280px;
-       padding:10px;
-       top:50%;
-       left:50%;
-       transform: translate(-50%,-50%);
-       position: absolute;
-       opacity: 0.9;
-   }
-   p{
-      font-size:30px;
-      font-family: 'Tangerine', cursive;
-   }
-   </style>
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+ small{
+     margin-bottom: 10px;
+     font-weight: bolder;
+ }
+body{
+    background-color: #F5F5F5;
+}
+h2{
+    font-weight: bold;
+    font-family: 'Anton', sans-serif;
+}
+li{
+    text-align: right;
+}
+.intro{
+    background-image: url('/static/image.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100;
+    height:80vh;
+    opacity:100;
+}
+nav{
+    background:#E0F7FA;
+    line-height: 50px;
+}
+.content{
+    color:black;
+    background-color:#F5F5F5;
+    width:500px;
+    height:280px;
+    padding:10px;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    opacity: 0.9;
+}
+p{
+   font-size:30px;
+   font-family: 'Tangerine', cursive;
+}
+</style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <body>
-    <div class="header" style="text-align:center;margin-top:10px;">
-        <h2 style="font-family: 'Tangerine', cursive;
-        font-size:50px;color:rgb(19, 27, 27)">welcome to  blogs and quotes</h2>
-        
-    </div>
-<div class="first">
+ 
+<div class="intro">
     <nav class="navbar navbar-expand-sm navbar-light bg-faded">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-content" aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
         
         <!-- Brand -->
-        <a class="navbar-brand" href="{{url_for('main.index')}}">QUOTES</a>
+        <a class="navbar-brand" href="{{url_for('main.index')}}">quotes</a>
         
         <!-- Links -->
         <div class="collapse navbar-collapse justify-content-end" id="nav-content">   
         <ul class="navbar-nav">
             {%  if current_user.is_authenticated %}
-            <li class="nav-item">
-            <a class="nav-link" href="{{url_for('auth.login')}}">Account</a>
-            </li>
+            
             <li class="nav-item">
             <a class="nav-link" href="{{url_for('main.blogs')}}">Create Blog</a>
             </li>
@@ -102,3 +95,42 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

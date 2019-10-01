@@ -1,16 +1,17 @@
 {%  extends 'base.html'  %}
-{% block content %} 
-<!-- <style>
-  h4{
-     color:#18FFFF;
-     }
-     h5{
-         font-family: Arial, Helvetica, sans-serif;
-     }
-     p{
-         font-size: 45px;
-     }
- </style>      -->
+{% block content %}
+<style>
+        h4{
+           color:rgb(60, 85, 197);
+           }
+           h5{
+               font-family: Arial, Helvetica, sans-serif;
+           }
+           p{
+               font-size: 45px;
+           }
+       </style>
+       
 <div class="row">
      
     <div class="col-md-6">
@@ -25,8 +26,8 @@
                                 </div>
                                 {%  if blog.author == current_user %}
                                     <div>
-                                        <!-- <a href="url_for('main.update_details' id = blog.id)" class="btn btn-secondary btn-sm">Update</a> -->
-                                        <button type="button" class="btn btn-dark btn-sm m-1" data-toggle="modal" data-target="#deleteModal">Delete</button>
+                                        <a href="url_for('main.update_details' id = blog.id)" class="btn btn-secondary btn-sm">Update</a>
+                                        <button type="button" class="btn btn-danger btn-sm m-1" data-toggle="modal" data-target="#deleteModal">Delete</button>
                                         
                                     </div>
 
