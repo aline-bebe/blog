@@ -8,13 +8,14 @@ from datetime import datetime
 def load_user(user_id):
     return User.query.get(int(user_id))
 
+
 class User(db.Model, UserMixin):
     __tablename__ = 'users'
     
     id = db.Column(db.Integer, primary_key = True)
     username = db.Column(db.String(20), nullable = False)
     email = db.Column(db.String(120), nullable = False)
-    password = db.Column(db.String(255), nullable = False)
+    pass_secure = db.Column(db.String(255), nullable = False)
     profile_pic_path = db.Column(db.String(255))
     blogs = db.relationship('Blog', backref = 'author', lazy = True) 
     
@@ -22,11 +23,22 @@ class User(db.Model, UserMixin):
         db.session.add(self)
         db.session.commit()
 
+    @property
+    def password(self):
+        raise AttributeError('You cannot read the password attribute')
+
+    @password.setter
+    def password(self, password):
+        self.pass_secure = generate_password_hash(password)
+
+    def verify_password(self, password):
+        return check_password_hash(self.pass_secure, password)
+
+
     
     
-    def ___repr__():
-        return f"User ('{self.username}', '{self.email}'')"
-    
+    def __repr__(self):
+        return f'User {self.username}'
 class Blog(db.Model):
     __tablename__ = 'blogs'
     

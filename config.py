@@ -4,7 +4,7 @@ class Config:
     # SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
     SECRET_KEY = ('SECRET_KEY')
     QUOTES_API_BASE_URL='http://quotes.stormconsultancy.co.uk/random.json'
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://wecode:New@localhost/blogs'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://wecode:New@localhost/blo'
 
   
 
@@ -17,7 +17,7 @@ class ProdConfig(Config):
     pass
 
 class DevConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://wecode:New@localhost/blogs'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://wecode:New@localhost/blo'
 
     DEBUG = True
 
